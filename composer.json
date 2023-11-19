@@ -14,7 +14,7 @@
     }
   ],
   "require": {
-    "php": ">=8.2",
+    "php": ">=8.1",
     "omegacms/model": "^1.0.0",
     "omegacms/service-provider": "^1.0.0",
     "opis/closure": "^3.6"
