@@ -29,7 +29,7 @@ use Omega\Model\AbstractModel;
  * Job class.
  *
  * @category    Omega
- * @package     Framework\Queue
+ * @package     Omega\Queue
  * @link        https://omegacms.github.com
  * @author      Adriano Giovannini <omegacms@outlook.com>
  * @copyright   Copyright (c) 2022 Adriano Giovannini. (https://omegacms.github.com)

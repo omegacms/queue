@@ -27,8 +27,8 @@ use RuntimeException;
  * Driver exception class.
  *
  * @category    Omega
- * @package     Framework\Queue
- * @subpackege  Framework\Queue\Exceptions
+ * @package     Omega\Queue
+ * @subpackege  Omega\Queue\Exceptions
  * @link        https://omegacms.github.com
  * @author      Adriano Giovannini <omegacms@outlook.com>
  * @copyright   Copyright (c) 2022 Adriano Giovannini. (https://omegacms.github.com)

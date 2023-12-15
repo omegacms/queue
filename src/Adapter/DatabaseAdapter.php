@@ -31,8 +31,8 @@ use Omega\Queue\Job;
  * Database adapter class.
  *
  * @category    Omega
- * @package     Framework\Queue
- * @subpackege  Framework\Queue\Adapter
+ * @package     Omega\Queue
+ * @subpackege  Omega\Queue\Adapter
  * @link        https://omegacms.github.com
  * @author      Adriano Giovannini <omegacms@outlook.com>
  * @copyright   Copyright (c) 2022 Adriano Giovannini. (https://omegacms.github.com)

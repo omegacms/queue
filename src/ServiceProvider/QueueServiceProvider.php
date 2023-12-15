@@ -30,8 +30,8 @@ use Omega\ServiceProvider\ServiceProviderInterface;
  * Queue service provider class.
  *
  * @category    Omega
- * @package     Framework\Queue
- * @subpackege  Framework\Queue\ServiceProvider
+ * @package     Omega\Queue
+ * @subpackege  Omega\Queue\ServiceProvider
  * @link        https://omegacms.github.com
  * @author      Adriano Giovannini <omegacms@outlook.com>
  * @copyright   Copyright (c) 2022 Adriano Giovannini. (https://omegacms.github.com)
