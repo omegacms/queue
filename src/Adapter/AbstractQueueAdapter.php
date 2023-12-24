@@ -27,6 +27,11 @@ use Omega\Queue\Job;
 /**
  * Abstract queue adapter class.
  *
+ * The `AbstractQueueAdapter` class provides a foundation for building specific queue
+ * adapters by defining common methods that a queue system should support. Queue adapters
+ * are responsible for pushing jobs onto the queue and shifting jobs off the queue for
+ * processing.
+ *
  * @category    Omega
  * @package     Omega\Queue
  * @subpackege  Omega\Queue\Adapter
@@ -39,17 +44,18 @@ use Omega\Queue\Job;
 abstract class AbstractQueueAdapter implements QueueAdapterInterface
 {
     /**
-     * Push
-     * @param  Closure $closure
-     * @param          ...$params
-     * @return int
+     * @ineritdoc
+     *
+     * @param Closure $closure   Holds the closure representing the job to be pushed onto the queue.
+     * @param mixed   ...$params Holds additional parameters needed for the job.
+     * @return int Returns the job identifier or status code.
      */
     abstract public function push( Closure $closure, ...$params ) : int;
 
     /**
-     * Shift.
+     * @inheritdoc
      *
-     * @return ?Job
+     * @return ?Job Returns the next job to be processed, or null if the queue is empty.
      */
     abstract public function shift() : ?Job;
 }

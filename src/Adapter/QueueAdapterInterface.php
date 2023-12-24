@@ -27,6 +27,9 @@ use Omega\Queue\Job;
 /**
  * Queue adapter interface.
  *
+ * `QueueAdapterInterface` defines the contract for queue adapters in the
+ * Omega CMS Queue Package.
+ *
  * @category    Omega
  * @package     Omega\Queue
  * @subpackege  Omega\Queue\Adapter
@@ -39,17 +42,18 @@ use Omega\Queue\Job;
 interface QueueAdapterInterface
 {
     /**
-     * Push
-     * @param  Closure $closure
-     * @param          ...$params
-     * @return int
+     * Push a job onto the queue.
+     *
+     * @param Closure $closure   Holds the closure representing the job to be pushed onto the queue.
+     * @param mixed   ...$params Holds additional parameters needed for the job.
+     * @return int Returns the job identifier or status code.
      */
     public function push( Closure $closure, ...$params ) : int;
 
     /**
-     * Shift.
+     * Shift the next job off the queue.
      *
-     * @return ?Job
+     * @return ?Job Returns the next job to be processed, or null if the queue is empty.
      */
     public function shift() : ?Job;
 }

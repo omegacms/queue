@@ -29,6 +29,9 @@ use Omega\ServiceProvider\ServiceProviderInterface;
 /**
  * Queue factory class.
  *
+ * The `QueueFactory` class provides a mechanism to register and bootstrap different queue drivers
+ * within the Omega CMS Queue Package.
+ *
  * @category    Omega
  * @package     Omega\Queue
  * @link        https://omegacms.github.io
@@ -42,15 +45,15 @@ class QueueFactory implements ServiceProviderInterface
     /**
      * Driver array.
      *
-     * @var array $drivers Holds an array of driver.
+     * @var array $drivers Holds an array of driver closures.
      */
     protected array $drivers;
 
     /**
-     * Add driver.
+     * @inheritdoc
      *
-     * @param  string  $alias  Holds the driver alias.
-     * @param  Closure $driver Holds an instance of Closure.
+     * @param  string  $alias  The alias for the driver.
+     * @param  Closure $driver A closure that creates an instance of the driver.
      * @return $this
      */
     public function register( string $alias, Closure $driver ) : static
@@ -61,10 +64,11 @@ class QueueFactory implements ServiceProviderInterface
     }
 
     /**
-     * Connect the driver.
+     * @inheritdoc
      *
-     * @param  array $config Holds an array of configuration.
-     * @return mixed
+     * @param  array $config Holds the configuration array for the queue driver.
+     * @return QueueAdapterInterface Return a current instance of QueueAdapterInterface.
+     * @throws DriverException If the type of the queue driver is not defined or is unrecognised.
      */
     public function bootstrap( array $config ) : QueueAdapterInterface
     {

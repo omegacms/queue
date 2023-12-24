@@ -26,6 +26,10 @@ use RuntimeException;
 /**
  * Driver exception class.
  *
+ * Thie `DriverException` class is thrown when an error occurs in the Queue package related
+ * to drivers. It extends the RuntimeException class, indicating a runtime error in the queue
+ * driver.
+ *
  * @category    Omega
  * @package     Omega\Queue
  * @subpackege  Omega\Queue\Exceptions

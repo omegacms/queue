@@ -29,6 +29,9 @@ use Omega\ServiceProvider\ServiceProviderInterface;
 /**
  * Queue service provider class.
  *
+ * The `QueueServiceProvider` class is responsible for providing the QueueFactory
+ * and registering the database queue driver within the Omega CMS Queue Package.
+ *
  * @category    Omega
  * @package     Omega\Queue
  * @subpackege  Omega\Queue\ServiceProvider
@@ -41,7 +44,7 @@ use Omega\ServiceProvider\ServiceProviderInterface;
 class QueueServiceProvider extends AbstractServiceProvider
 {
     /**
-     * Get the service name.
+     * @inheritdoc
      *
      * @return string Return the service name.
      */
@@ -51,9 +54,9 @@ class QueueServiceProvider extends AbstractServiceProvider
     }
 
     /**
-     * Get the service factory.
+     * @inheritdoc
      *
-     * @return mixed
+     * @return mixed Return an instance of the service factory.
      */
     protected function factory() : ServiceProviderInterface
     {
@@ -61,9 +64,9 @@ class QueueServiceProvider extends AbstractServiceProvider
     }
 
     /**
-     * Get drivers.
+     * @inheritdoc
      *
-     * @return array Return an array of drivers for the service.
+     * @return array Return an array of closures that create instances of queue drivers.
      */
     protected function drivers() : array
     {

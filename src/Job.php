@@ -28,6 +28,10 @@ use Omega\Database\Model\AbstractModel;
 /**
  * Job class.
  *
+ * The `Job` class represents a job that can be added to the queue. Each job is associated
+ * with a closure and its parameters. When the job is processed, the closure is executed
+ * with the provided parameters.
+ *
  * @category    Omega
  * @package     Omega\Queue
  * @link        https://omegacms.github.io
@@ -53,7 +57,7 @@ class Job extends AbstractModel
     private mixed $params;
 
     /**
-     * Get database table.
+     * Get the database table associated with the model.
      *
      * @return string Return the database table.
      */
@@ -65,7 +69,7 @@ class Job extends AbstractModel
     /**
      * Run the job.
      *
-     * @return mixed
+     * @return mixed Return the result of the closure execution.
      */
     public function run() : mixed
     {

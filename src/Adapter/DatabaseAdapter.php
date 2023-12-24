@@ -30,6 +30,10 @@ use Omega\Queue\Job;
 /**
  * Database adapter class.
  *
+ * The `DatabaseAdapter` class serves as a queue adapter for handling jobs using a database
+ * backend. It allows pushing closures representing jobs to a queue and retrieving the next
+ * job to be processed.
+ * *
  * @category    Omega
  * @package     Omega\Queue
  * @subpackege  Omega\Queue\Adapter
@@ -42,11 +46,11 @@ use Omega\Queue\Job;
 class DatabaseAdapter extends AbstractQueueAdapter
 {
     /**
-     * Push
-     * @param  Closure $closure
-     * @param          ...$params
-     * @return int
-     * @throws Exception
+     * @ineritdoc
+     *
+     * @param Closure $closure   Holds the closure representing the job to be pushed onto the queue.
+     * @param mixed   ...$params Holds additional parameters needed for the job.
+     * @return int Returns the job identifier or status code.
      */
     public function push( Closure $closure, ...$params ) : int
     {
@@ -60,9 +64,9 @@ class DatabaseAdapter extends AbstractQueueAdapter
     }
 
     /**
-     * Shift.
+     * @inheritdoc
      *
-     * @return ?Job
+     * @return ?Job Returns the next job to be processed, or null if the queue is empty.
      */
     public function shift() : ?Job
     {
