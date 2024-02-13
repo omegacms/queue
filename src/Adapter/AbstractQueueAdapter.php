@@ -44,6 +44,16 @@ use Omega\Queue\Job;
 abstract class AbstractQueueAdapter implements QueueAdapterInterface
 {
     /**
+     * AbstractQueueAdapter class constructor.
+     * 
+     * @return void
+     */
+    public function __construct()
+    {
+        // --> Empty constructor for future use.
+    }
+
+    /**
      * @ineritdoc
      *
      * @param Closure $closure   Holds the closure representing the job to be pushed onto the queue.

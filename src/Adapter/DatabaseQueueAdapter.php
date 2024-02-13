@@ -22,6 +22,7 @@ namespace Omega\Queue\Adapter;
  * @use
  */
 use function serialize;
+use function Omega\Helpers\config;
 use Closure;
 use Exception;
 use Opis\Closure\SerializableClosure;
@@ -43,8 +44,19 @@ use Omega\Queue\Job;
  * @license     https://www.gnu.org/licenses/gpl-3.0-standalone.html     GPL V3.0+
  * @version     1.0.0
  */
-class DatabaseAdapter extends AbstractQueueAdapter
+class DatabaseQueueAdapter extends AbstractQueueAdapter
 {
+    /**
+     * DatabaseAdapter class constructor.
+     * 
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        // --> Empty constructor for future use.
+    }
+
     /**
      * @ineritdoc
      *

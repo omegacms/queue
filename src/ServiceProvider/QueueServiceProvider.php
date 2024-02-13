@@ -22,7 +22,7 @@ namespace Omega\Queue\ServiceProvider;
  * @use
  */
 use Omega\Queue\QueueFactory;
-use Omega\Queue\Adapter\DatabaseAdapter;
+use Omega\Queue\Adapter\DatabaseQueueAdapter;
 use Omega\ServiceProvider\AbstractServiceProvider;
 use Omega\ServiceProvider\ServiceProviderInterface;
 
@@ -72,7 +72,7 @@ class QueueServiceProvider extends AbstractServiceProvider
     {
         return [
             'database' => function( $config ) {
-            return new DatabaseAdapter( $config );
+            return new DatabaseQueueAdapter( $config );
             },
         ];
     }
