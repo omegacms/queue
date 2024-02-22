@@ -23,7 +23,7 @@ namespace Omega\Queue;
  */
 use Closure;
 use Omega\Queue\Adapter\QueueAdapterInterface;
-use Omega\Queue\Exceptions\DriverException;
+use Omega\Queue\Exceptions\QueueException;
 use Omega\ServiceProvider\ServiceProviderInterface;
 
 /**
@@ -73,7 +73,7 @@ class QueueFactory implements ServiceProviderInterface
     public function bootstrap( array $config ) : QueueAdapterInterface
     {
         if ( ! isset( $config[ 'type' ] ) ) {
-            throw new DriverException(
+            throw new QueueException(
                 'Type is not defined.'
             );
         }
@@ -84,7 +84,7 @@ class QueueFactory implements ServiceProviderInterface
             return $this->drivers[ $type ]( $config );
         }
 
-        throw new DriverException(
+    throw new QueueException(
             'Unrecognised type'
         );
     }

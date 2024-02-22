@@ -58,9 +58,9 @@ abstract class AbstractQueueAdapter implements QueueAdapterInterface
      *
      * @param Closure $closure   Holds the closure representing the job to be pushed onto the queue.
      * @param mixed   ...$params Holds additional parameters needed for the job.
-     * @return int Returns the job identifier or status code.
+     * @return int|string Returns the job identifier or status code.
      */
-    abstract public function push( Closure $closure, ...$params ) : int;
+    abstract public function push( Closure $closure, ...$params ) : int|string;
 
     /**
      * @inheritdoc

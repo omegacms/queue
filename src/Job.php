@@ -11,7 +11,7 @@
 /**
  * @declare
  */
-declare( strict_types = 1 );
+//declare( strict_types = 1 );
 
 /**
  * @namespace
@@ -42,20 +42,6 @@ use Omega\Database\Model\AbstractModel;
  */
 class Job extends AbstractModel
 {
-    /**
-     * Closure object.
-     *
-     * @var mixed $closure Holds the closure object.
-     */
-    private mixed $closure;
-
-    /**
-     * Params.
-     *
-     * @var mixed $params Holds the params.
-     */
-    private mixed $params;
-
     /**
      * Get the database table associated with the model.
      *
