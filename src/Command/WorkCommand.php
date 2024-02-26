@@ -95,7 +95,7 @@ class WorkCommand extends Command
                     $job->is_complete = true;
                     $job->save();
 
-                    sleep(1);
+                    //leep(1);
                 }
                 catch (Exception $e) {
                     $message = $e->getMessage();
