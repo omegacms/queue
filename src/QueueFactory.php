@@ -24,7 +24,7 @@ namespace Omega\Queue;
 use Closure;
 use Omega\Queue\Adapter\QueueAdapterInterface;
 use Omega\Queue\Exceptions\QueueException;
-use Omega\ServiceProvider\ServiceProviderInterface;
+use Omega\Container\ServiceProvider\ServiceProviderInterface;
 
 /**
  * Queue factory class.

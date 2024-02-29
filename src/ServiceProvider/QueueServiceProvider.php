@@ -23,8 +23,8 @@ namespace Omega\Queue\ServiceProvider;
  */
 use Omega\Queue\QueueFactory;
 use Omega\Queue\Adapter\DatabaseQueueAdapter;
-use Omega\ServiceProvider\AbstractServiceProvider;
-use Omega\ServiceProvider\ServiceProviderInterface;
+use Omega\Container\ServiceProvider\AbstractServiceProvider;
+use Omega\Container\ServiceProvider\ServiceProviderInterface;
 
 /**
  * Queue service provider class.
