@@ -25,7 +25,7 @@ use function serialize;
 use function Omega\Helpers\config;
 use Closure;
 use Exception;
-use Opis\Closure\SerializableClosure;
+use Omega\SerializableClosure;
 use Omega\Queue\Job;
 
 /**
