@@ -63,6 +63,7 @@ class DatabaseQueueAdapter extends AbstractQueueAdapter
      * @param Closure $closure   Holds the closure representing the job to be pushed onto the queue.
      * @param mixed   ...$params Holds additional parameters needed for the job.
      * @return int|string Returns the job identifier or status code.
+     * @throws Exception
      */
     public function push( Closure $closure, ...$params ) : int|string
     {

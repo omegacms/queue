@@ -23,9 +23,7 @@ namespace Omega\Queue\Command;
  */
 use function Omega\Helpers\app;
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Exception;
 
@@ -63,7 +61,7 @@ class WorkCommand extends Command
      *
      * @return void
      */
-    protected function configure()
+    protected function configure() : void
     {
         $this
             ->setDescription( 'Runs tasks that have been queued.' )
@@ -81,7 +79,7 @@ class WorkCommand extends Command
      * @param  OutputInterface $output Holds an instance of OutputInterface.
      * @return int Return 0 if everything went fine, or an exit code.
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute( InputInterface $input, OutputInterface $output ) : int
     {
         $output->writeln('<info>Waiting for jobs.</info>');
 
@@ -90,16 +88,16 @@ class WorkCommand extends Command
                 try {
                     $job->run();
 
-                    $output->writeln("<info>Completed {$job->id}</info>");
+                    $output->writeln("<info>Completed $job->id</info>");
 
                     $job->is_complete = true;
                     $job->save();
 
-                    //leep(1);
+                    //sleep(1);
                 }
                 catch (Exception $e) {
                     $message = $e->getMessage();
-                    $output->writeln("<error>{$message}</error>");
+                    $output->writeln("<error>$message</error>");
 
                     $job->attempts = $job->attempts + 1;
                     $job->save();
