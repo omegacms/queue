@@ -23,7 +23,7 @@ namespace Omega\Queue;
  */
 use function Omega\Helpers\config;
 use function unserialize;
-use Omega\Model\AbstractModel;
+use Omega\Database\AbstractModel;
 
 /**
  * Job class.
