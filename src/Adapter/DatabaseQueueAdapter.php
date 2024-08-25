@@ -22,7 +22,6 @@ namespace Omega\Queue\Adapter;
  * @use
  */
 use function serialize;
-use function Omega\Helpers\config;
 use Closure;
 use Exception;
 use Omega\SerializableClosure\SerializableClosure;

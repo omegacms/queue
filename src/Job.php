@@ -21,7 +21,6 @@ namespace Omega\Queue;
 /**
  * @use
  */
-use function Omega\Helpers\config;
 use function unserialize;
 use Omega\Database\AbstractModel;
 

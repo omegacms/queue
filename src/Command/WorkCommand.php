@@ -21,7 +21,6 @@ namespace Omega\Queue\Command;
 /**
  * @use
  */
-use function Omega\Helpers\app;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
