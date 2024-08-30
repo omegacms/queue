@@ -56,7 +56,7 @@ class QueueServiceProvider extends AbstractServiceProvider
     /**
      * @inheritdoc
      *
-     * @return mixed Return an instance of the service factory.
+     * @return ServiceProviderInterface Return an instance of ServiceProviderInterface.
      */
     protected function factory() : ServiceProviderInterface
     {
