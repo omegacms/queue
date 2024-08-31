@@ -66,7 +66,7 @@ class QueueFactory implements ServiceProviderInterface
     /**
      * @inheritdoc
      *
-     * @param  array $config Holds the configuration array for the queue driver.
+     * @param  array<string, mixed> $config Holds the configuration array for the queue driver.
      * @return QueueAdapterInterface Return a current instance of QueueAdapterInterface.
      * @throws QueueException If the type of the queue driver is not defined or is unrecognised.
      */
