@@ -21,6 +21,7 @@ namespace Omega\Queue\ServiceProvider;
 /**
  * @use
  */
+use Closure;
 use Omega\Queue\QueueFactory;
 use Omega\Queue\Adapter\DatabaseQueueAdapter;
 use Omega\Container\ServiceProvider\AbstractServiceProvider;
@@ -66,7 +67,7 @@ class QueueServiceProvider extends AbstractServiceProvider
     /**
      * @inheritdoc
      *
-     * @return array Return an array of closures that create instances of queue drivers.
+     * @return array<string, Closure> Return an array of closures that create instances of queue drivers.
      */
     protected function drivers() : array
     {
