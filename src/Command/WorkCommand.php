@@ -54,6 +54,16 @@ class WorkCommand extends Command
     protected static $defaultName = 'queue:work';
 
     /**
+     * Command constructor.
+     * 
+     * @return void 
+     */
+    public function __construct()
+    {
+        parent::__construct( 'queue' );
+    }
+
+    /**
      * Configures the current command.
      *
      * This method configures the command description, options, and help information.
@@ -92,7 +102,7 @@ class WorkCommand extends Command
                     $job->is_complete = true;
                     $job->save();
 
-                    //sleep(1);
+                    return Command::SUCCESS;
                 }
                 catch (Exception $e) {
                     $message = $e->getMessage();
