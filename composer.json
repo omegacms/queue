@@ -17,12 +17,13 @@
     "php": ">=8.2",
     "omegacms/database": "^1.0.0",
     "omegacms/container": "^1.0.0",
-    "omegacms/serializable-closure": "^1.0.0"
+    "omegacms/serializable-closure": "^1.0.0",
+    "symfony/console": "^7.1"
   },
   "require-dev": {
     "omegacms/testing": "^1.0.0",
-    "phpunit/phpunit": "^9.5",
-    "symfony/process": "^5.2"
+    "phpunit/phpunit": "^11.3",
+    "phpstan/phpstan":"^1.12"
   },
   "autoload": {
     "psr-4": {
