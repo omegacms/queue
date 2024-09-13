@@ -20,23 +20,10 @@
     "omegacms/serializable-closure": "^1.0.0",
     "symfony/console": "^7.1"
   },
-  "require-dev": {
-    "omegacms/testing": "^1.0.0",
-    "phpunit/phpunit": "^9.5",
-    "phpstan/phpstan":"^1.12"
-  },
   "autoload": {
     "psr-4": {
       "Omega\\Queue\\": "src/"
     }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Omega\\Queue\\Tests\\": "tests/"
-    }
-  },
-  "scripts": {
-    "test": "vendor/bin/phpunit"
   },
   "minimum-stability": "stable"
 }
