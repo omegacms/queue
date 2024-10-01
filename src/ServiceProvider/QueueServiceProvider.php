@@ -21,60 +21,41 @@ namespace Omega\Queue\ServiceProvider;
 /**
  * @use
  */
-use Closure;
-use Omega\Queue\QueueFactory;
-use Omega\Queue\Adapter\DatabaseQueueAdapter;
-use Omega\Container\ServiceProvider\AbstractServiceProvider;
+use Omega\Application\Application;
 use Omega\Container\ServiceProvider\ServiceProviderInterface;
+use Omega\Queue\Factory\QueueFactory;
+use Omega\Support\Facades\Config;
 
 /**
  * Queue service provider class.
  *
- * The `QueueServiceProvider` class is responsible for providing the QueueFactory
- * and registering the database queue driver within the Omega CMS Queue Package.
+ * The `QueueServiceProvider` class is responsible for creating the QueueFactory instance
+ * and defining the available drivers for the session service, such as the 'native' driver.
  *
  * @category    Omega
- * @package     Omega\Queue
- * @subpackege  Omega\Queue\ServiceProvider
+ * @package     Queue
+ * @subpackage  ServiceProvider
  * @link        https://omegacms.github.io
  * @author      Adriano Giovannini <omegacms@outlook.com>
  * @copyright   Copyright (c) 2024 Adriano Giovannini. (https://omegacms.github.io)
  * @license     https://www.gnu.org/licenses/gpl-3.0-standalone.html     GPL V3.0+
  * @version     1.0.0
  */
-class QueueServiceProvider extends AbstractServiceProvider
+class QueueServiceProvider implements ServiceProviderInterface
 {
     /**
      * @inheritdoc
-     *
-     * @return string Return the service name.
+     * 
+     * @param  Application $application Holds the main application container to which services are bound.
+     * @return void This method does not return a value.
      */
-    protected function name() : string
+    public function bind( Application $application ) : void // Non deve ritornare un factory
     {
-        return 'queue';
-    }
+        $application->alias( 'queue', function () {
+            $config  = Config::get( 'queue' );
+            $default = $config[ 'default' ];
 
-    /**
-     * @inheritdoc
-     *
-     * @return ServiceProviderInterface Return an instance of ServiceProviderInterface.
-     */
-    protected function factory() : ServiceProviderInterface
-    {
-        return new QueueFactory();
-    }
-
-    /**
-     * @inheritdoc
-     *
-     * @return array<string, Closure> Return an array of closures that create instances of queue drivers.
-     */
-    protected function drivers() : array
-    {
-        return [
-            'database' => function( $config ) {
-            return new DatabaseQueueAdapter( $config );
-            },
-        ];
+            return (new QueueFactory())->create($config[$default]);
+        });
     }
 }
