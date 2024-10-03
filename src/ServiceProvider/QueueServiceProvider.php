@@ -24,7 +24,7 @@ namespace Omega\Queue\ServiceProvider;
 use Omega\Application\Application;
 use Omega\Container\ServiceProvider\ServiceProviderInterface;
 use Omega\Queue\Factory\QueueFactory;
-use Omega\Support\Facades\Config;
+use Omega\Support\Facade\Facades\Config;
 
 /**
  * Queue service provider class.
