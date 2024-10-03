@@ -16,7 +16,7 @@ declare( strict_types = 1 );
 /**
  * @namespace
  */
-namespace Omega\Queue\Exceptions;
+namespace Omega\Queue\Exception;
 
 /**
  * @use
@@ -31,8 +31,8 @@ use RuntimeException;
  * driver.
  *
  * @category    Omega
- * @package     Omega\Queue
- * @subpackege  Omega\Queue\Exceptions
+ * @package     Queue
+ * @subpackage  Exceptions
  * @link        https://omegacms.github.io
  * @author      Adriano Giovannini <omegacms@outlook.com>
  * @copyright   Copyright (c) 2024 Adriano Giovannini. (https://omegacms.github.io)

@@ -31,8 +31,8 @@ use Omega\Queue\Job;
  * Omega CMS Queue Package.
  *
  * @category    Omega
- * @package     Omega\Queue
- * @subpackege  Omega\Queue\Adapter
+ * @package     Queue
+ * @subpackage  Adapter
  * @link        https://omegacms.github.io
  * @author      Adriano Giovannini <omegacms@outlook.com>
  * @copyright   Copyright (c) 2024 Adriano Giovannini. (https://omegacms.github.io)

@@ -36,8 +36,8 @@ use Exception;
  * execution.
  *
  * @category    Omega
- * @package     Omega\Queue
- * @subpackage  Omega\Queue\Command
+ * @package     Queue
+ * @subpackage  Command
  * @link        https://omegacms.github.io
  * @author      Adriano Giovannini <omegacms@outlook.com>
  * @copyright   Copyright (c) 2024 Adriano Giovannini. (https://omegacms.github.io)

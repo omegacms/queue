@@ -21,9 +21,9 @@ namespace Omega\Queue\Factory;
 /**
  * @use
  */
-use Exception;
 use Omega\Queue\Adapter\DatabaseQueueAdapter;
 use Omega\Queue\Adapter\QueueAdapterInterface;
+use Omega\Queue\Exception\QueueException;
 
 /**
  * Database factory class.
@@ -59,7 +59,7 @@ class QueueFactory
 
         return match( $config[ 'type' ] ) {
             'database'  => new DatabaseQueueAdapter( $config ),
-            default     => throw new Exception( 'Unrecognised type.' )
+            default     => throw new QueueException( 'Unrecognised type.' )
         };
     }    
 }
